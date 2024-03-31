@@ -1,6 +1,23 @@
 
 public class Main {
     public static void main(String[] args) {
+
+//        Задача 4 из презентации:
+//        Определить сколько раз слово из word встречается в text
+
+        String text = "application hello template";
+        String word = "hello";
+        int amountCounter = 0;
+
+        String[] words = text.split(" ");
+        for (String element : words) {
+            if(element.indexOf(word, 0) == 0){
+                amountCounter++;
+            }
+        }
+        System.out.println("Cлово " + word + " встречается в предложении " + amountCounter + " раз(-а).");
+
+        System.out.println();
         System.out.println("Проверка пароля: ");
         boolean password1 = validatePassword("Qwerty1ui");
         boolean password2 = validatePassword("123uuu");
@@ -125,6 +142,7 @@ public class Main {
         System.out.println(builder.substring(0, builder.length() - 1));
         return builder.substring(0, builder.length() - 1);
     }
+
 }
 
 
